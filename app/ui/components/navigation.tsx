@@ -8,11 +8,8 @@ export default function Navigation() {
       </NavbarBrand>
       <NavbarContent justify="end">
         <NavbarItem>
-          <Link href="#">Login</Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
+          <Button as={Link} color="danger" href="/" variant="flat">
+            Log out
           </Button>
         </NavbarItem>
       </NavbarContent>

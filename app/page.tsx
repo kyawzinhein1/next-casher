@@ -1,9 +1,11 @@
-import Navigation from "./ui/components/navigation";
+import LoginPage from "./ui/components/login";
+import RegisterPage from "./ui/components/register";
 
 export default function Home() {
   return (
     <div>
-      <Navigation />
+      <LoginPage />
+      {/* <RegisterPage /> */}
     </div>
   );
 }
