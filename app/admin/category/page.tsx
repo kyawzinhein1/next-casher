@@ -3,29 +3,29 @@
 import { Button } from "@nextui-org/react";
 import { useState } from "react";
 
-export default function ProductPage() {
-  const [products, setProducts] = useState<string[]>([]);
-  const [newProduct, setNewProduct] = useState("");
+export default function CategoryPage() {
+  const [categories, setCategories] = useState<string[]>([]);
+  const [newCategory, setNewCategory] = useState("");
   const [isCreating, setIsCreating] = useState(false);
 
-  const handleAddProduct = () => {
-    if (!newProduct.trim()) {
+  const handleAddCategory = () => {
+    if (!newCategory.trim()) {
       alert("Category name cannot be empty!");
       return;
     }
 
-    setProducts((prev) => [...prev, newProduct]); // Add to the list
-    setNewProduct(""); // Clear the input
+    setCategories((prev) => [...prev, newCategory]); // Add to the list
+    setNewCategory(""); // Clear the input
     setIsCreating(false); // Close the creation input
   };
 
   const handleCancle = () => {
-    return setNewProduct("");
+    return setNewCategory("");
   };
 
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Product Management</h1>
+      <h1 className="text-2xl font-bold mb-4">Category Management</h1>
       {!isCreating && (
         <button
           onClick={() => setIsCreating(true)}
@@ -40,12 +40,12 @@ export default function ProductPage() {
         <div className="mt-4">
           <input
             type="text"
-            value={newProduct}
-            onChange={(e) => setNewProduct(e.target.value)}
-            placeholder="Enter product name"
+            value={newCategory}
+            onChange={(e) => setNewCategory(e.target.value)}
+            placeholder="Enter category name"
             className="border p-2 rounded w-64"
           />
-          <Button color="success" onClick={handleAddProduct}>
+          <Button color="success" onClick={handleAddCategory}>
             Save
           </Button>
           <Button color="danger" onClick={handleCancle}>
@@ -56,15 +56,15 @@ export default function ProductPage() {
 
       {/* List Categories */}
       <ul className="mt-6">
-        {products.length > 0 ? (
-          products.map((product, index) => (
+        {categories.length > 0 ? (
+          categories.map((category, index) => (
             <li key={index} className="mb-2">
-              {product}
+              {category}
             </li>
           ))
         ) : (
           <p className="text-red-600 mt-6">
-            No products yet. Start by creating one!
+            No categories yet. Start by creating one!
           </p>
         )}
       </ul>
