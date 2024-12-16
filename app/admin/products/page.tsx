@@ -10,7 +10,7 @@ export default function ProductPage() {
 
   const handleAddProduct = () => {
     if (!newProduct.trim()) {
-      alert("Category name cannot be empty!");
+      alert("Product name cannot be empty!");
       return;
     }
 
@@ -31,7 +31,7 @@ export default function ProductPage() {
           onClick={() => setIsCreating(true)}
           className="px-4 py-2 bg-blue-500 text-white rounded"
         >
-          Create New Category
+          Create a New Product
         </button>
       )}
 
@@ -43,9 +43,9 @@ export default function ProductPage() {
             value={newProduct}
             onChange={(e) => setNewProduct(e.target.value)}
             placeholder="Enter product name"
-            className="border p-2 rounded w-64"
+            className="border p-2 rounded-xl w-64 mr-2 outline-none"
           />
-          <Button color="success" onClick={handleAddProduct}>
+          <Button color="success" onClick={handleAddProduct} className="mr-2 text-white">
             Save
           </Button>
           <Button color="danger" onClick={handleCancle}>

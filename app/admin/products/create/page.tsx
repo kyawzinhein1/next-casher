@@ -13,7 +13,7 @@ export default function CreateProductPage() {
 
   return (
     <div>
-      <h1>Create a New Category</h1>
+      <h1>Create a New Product</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Product Name:

@@ -31,7 +31,7 @@ export default function CategoryPage() {
           onClick={() => setIsCreating(true)}
           className="px-4 py-2 bg-blue-500 text-white rounded"
         >
-          Create New Category
+          Create a New Category
         </button>
       )}
 
@@ -43,9 +43,9 @@ export default function CategoryPage() {
             value={newCategory}
             onChange={(e) => setNewCategory(e.target.value)}
             placeholder="Enter category name"
-            className="border p-2 rounded w-64"
+            className="border p-2 rounded-xl w-64 mr-2 outline-none"
           />
-          <Button color="success" onClick={handleAddCategory}>
+          <Button color="success" onClick={handleAddCategory} className="mr-2 text-white">
             Save
           </Button>
           <Button color="danger" onClick={handleCancle}>

@@ -2,12 +2,13 @@ import Link from "next/link";
 import Navigation from "../ui/components/navigation";
 import { usePathname } from "next/navigation";
 
-interface AdminLayoutProps {
+interface CasherLayoutProps {
   children: React.ReactNode;
 }
 
-const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
+const CasherLayout: React.FC<CasherLayoutProps> = ({ children }) => {
   const currentPath = usePathname();
+
   return (
     <div>
       <Navigation />
@@ -15,36 +16,38 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
         {/* Sidebar */}
         <div
           style={{ width: "150px", background: "#fff" }}
-          className="flex flex-col items-left shadow-md gap-1 mt-8"
+          className="flex flex-col items-left shadow-md"
         >
           <Link
-            href="/admin/dashboard"
+            href="/casher/dashboard"
             className={
-              currentPath === "/admin/dashboard" ? "bg-teal-500 text-white" : ""
+              currentPath === "/casher/dashboard"
+                ? "bg-teal-500 text-white"
+                : ""
             }
           >
             <p className="my-2 mx-4">Dashboard</p>
           </Link>
           <Link
-            href="/admin/category"
+            href="/casher/sale"
             className={
-              currentPath === "/admin/category" ? "bg-teal-500 text-white" : ""
+              currentPath === "/casher/sale" ? "bg-teal-500 text-white" : ""
             }
           >
-            <p className="my-2 mx-4">Category</p>
+            <p className="my-2 mx-4">Sale</p>
           </Link>
           <Link
-            href="/admin/products"
+            href="/casher/voucher"
             className={
-              currentPath === "/admin/products" ? "bg-teal-500 text-white" : ""
+              currentPath === "/casher/voucher" ? "bg-teal-500 text-white" : ""
             }
           >
-            <p className="my-2 mx-4">Products</p>
+            <p className="my-2 mx-4">Voucher</p>
           </Link>
           <Link
-            href="/admin/settings"
+            href="/casher/settings"
             className={
-              currentPath === "/admin/settings" ? "bg-teal-500 text-white" : ""
+              currentPath === "/casher/settings" ? "bg-teal-500 text-white" : ""
             }
           >
             <p className="my-2 mx-4">Settings</p>
@@ -60,4 +63,4 @@ const AdminLayout: React.FC<AdminLayoutProps> = ({ children }) => {
   );
 };
 
-export default AdminLayout;
+export default CasherLayout;
